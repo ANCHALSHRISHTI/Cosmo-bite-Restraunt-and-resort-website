@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Our Facilities</h1></header>
+    <section>
+        <h2>Swimming Pool</h2>
+        <p>Relax in our crystal-clear swimming pool.</p>
+        <h2>Spa & Massage</h2>
+        <p>Pamper yourself with our spa and massage services.</p>
+    </section>
+    <a href="index.html">Back to Home</a>
+</body>
+</html>
