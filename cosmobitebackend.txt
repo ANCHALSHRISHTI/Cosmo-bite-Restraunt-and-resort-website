@@ -138,8 +138,8 @@ app.get('/menu', (req, res) => {
 
 // Room Details
 const rooms = [
-    { type: "AC", price: 100, facilities: ["WiFi", "TV", "Mini Bar"] }, 
-    { type: "Non-AC", price: 70, facilities: ["WiFi", "TV"] } 
+    { type: "AC", price: $100, facilities: ["WiFi", "TV", "Mini Bar"] }, 
+    { type: "Non-AC", price: $70, facilities: ["WiFi", "TV"] } 
 ];
 
 app.get('/rooms', (req, res) => {
