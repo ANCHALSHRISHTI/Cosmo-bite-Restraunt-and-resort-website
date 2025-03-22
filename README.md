@@ -1,1 +1,0 @@
-# Cosmobite frontend
