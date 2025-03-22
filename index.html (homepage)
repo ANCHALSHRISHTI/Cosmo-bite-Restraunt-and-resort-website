@@ -29,9 +29,21 @@
     <section class="image-gallery">
         <h2>Explore Our Resort</h2>
         <div class="gallery">
-            <img src="image1.jpg" alt="Resort View">
+            <img src="resort view1.jpg" alt="Resort View">
+            <img src="resort view2.jpg" alt="Resort View">
+            <img src="resort view3.jpg" alt="Resort View">
+            <img src="resort view4.jpg" alt="Resort View">
+            <img src="image2.jpg" alt="Restaurant Interior">
+            <img src="image2.jpg" alt="Restaurant Interior">
+            <img src="image2.jpg" alt="Restaurant Interior">
             <img src="image2.jpg" alt="Restaurant Interior">
             <img src="image3.jpg" alt="Swimming Pool">
+            <img src="image3.jpg" alt="Swimming Pool">
+            <img src="image3.jpg" alt="Swimming Pool">
+            <img src="image3.jpg" alt="Swimming Pool">
+            <img src="image4.jpg" alt="Luxury Room">
+            <img src="image4.jpg" alt="Luxury Room"> 
+            <img src="image4.jpg" alt="Luxury Room">
             <img src="image4.jpg" alt="Luxury Room">
         </div>
     </section>
