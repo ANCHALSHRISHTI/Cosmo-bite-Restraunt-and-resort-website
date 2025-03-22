@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Contact & Payment</h1></header>
+    <section>
+        <h2>Contact Us</h2>
+        <p>Email: contact@cosmobiteresort.com</p>
+        <p>Phone: +xxxxxxxxxx</p>
+        <h2>Payment Options</h2>
+        <p>Offline: Pay at the reception.</p>
+        <p>Online: Credit/Debit, UPI, PayPal.</p>
+    </section>
+    <a href="index.html">Back to Home</a>
+</body>
+</html>
