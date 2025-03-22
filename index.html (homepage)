@@ -14,7 +14,7 @@
     </div>
 
     <header>
-        <h1>cosmo bite Restaurant & Resort</h1>
+        <h1>Cosmo Bite Restaurant & Resort</h1>
         <nav>
             <ul>
                 <li><a href="menu.html">Menu</a></li>
@@ -24,6 +24,17 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Image Gallery Section -->
+    <section class="image-gallery">
+        <h2>Explore Our Resort</h2>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Resort View">
+            <img src="image2.jpg" alt="Restaurant Interior">
+            <img src="image3.jpg" alt="Swimming Pool">
+            <img src="image4.jpg" alt="Luxury Room">
+        </div>
+    </section>
 
     <section class="customer-details">
         <h2>Enter Your Name</h2>
@@ -37,4 +48,3 @@
     </footer>
 </body>
 </html>
-
