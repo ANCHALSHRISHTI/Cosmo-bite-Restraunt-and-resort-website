@@ -1,0 +1,158 @@
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+// Routes
+app.get('/', (req, res) => {
+    res.send("Welcome to Cosmo Bite Restaurant & Resort API");
+});
+
+// Welcome message based on first letter of the name
+app.post('/welcome', (req, res) => {
+    const { name } = req.body;
+    if (!name) return res.status(400).json({ message: "Name is required" });
+    const firstLetter = name[0].toUpperCase();
+    const messages = {
+        'A': "Amazing to have you here!", 'B': "Be ready for a delightful experience!", 'C': "Come and enjoy your time!", 'D': "Delight awaits you!", 'E': "Enjoy the best hospitality!",
+        'F': "Feel at home with us!", 'G': "Great to see you!", 'H': "Happy moments start here!", 'I': "Indulge in luxury!", 'J': "Joy and comfort together!",
+        'K': "Kindly relax and enjoy!", 'L': "Luxury at its best!", 'M': "Memorable experiences await!", 'N': "Never a dull moment here!", 'O': "Outstanding service guaranteed!",
+        'P': "Pleasure to serve you!", 'Q': "Quality hospitality awaits!", 'R': "Relax and rejuvenate!", 'S': "Special moments await!", 'T': "Treat yourself today!",
+        'U': "Unforgettable stay ahead!", 'V': "Vacation in comfort!", 'W': "Welcome to paradise!", 'X': "Xceptional service awaits!", 'Y': "Your happiness matters!", 'Z': "Zeal and zest await!"
+    };
+    res.json({ message: messages[firstLetter] || "Welcome to our resort!" });
+});
+
+// Food Menu
+const menu = [
+    {
+        cuisine: "North Indian",
+        region: "Punjab",
+        dishes: [
+            { name: "Butter Chicken", description: "Creamy tomato-based chicken curry. (High in protein & rich in flavors)" }
+        ]
+    },
+    {
+        cuisine: "North Indian",
+        region: "Kashmir",
+        dishes: [
+            { name: "Rogan Josh", description: "Slow-cooked aromatic lamb curry. (Packed with proteins & warming spices)" },
+            { name: "Yakhni Pulao", description: "Fragrant rice cooked in saffron yogurt broth. (Easy digestion & rich in flavor)" }
+        ]
+    },
+    {
+        cuisine: "North Indian",
+        region: "Uttar Pradesh",
+        dishes: [
+            { name: "Tunday Kabab", description: "Melt-in-mouth mutton kebabs. (Protein-packed & aromatic spices)" },
+            { name: "Baati Chokha", description: "Roasted wheat balls with mashed potatoes & eggplant. (Rich in fiber & minerals)" }
+        ]
+    },
+    {
+        cuisine: "South Indian",
+        region: "Tamil Nadu",
+        dishes: [
+            { name: "Dosa with Sambar", description: "Crispy fermented crepe with lentil soup. (Probiotic-rich & great for digestion)" },
+            { name: "Chettinad Chicken", description: "Spicy & flavorful chicken dish. (Boosts metabolism & immunity)" }
+        ]
+    },
+    {
+        cuisine: "South Indian",
+        region: "Kerala",
+        dishes: [
+            { name: "Kerala Fish Curry", description: "Tangy coconut-based fish curry. (High in Omega-3 for heart health)" },
+            { name: "Appam & Stew", description: "Soft rice pancakes with coconut stew. (Rich in fiber & gut-friendly)" }
+        ]
+    },
+    {
+        cuisine: "South Indian",
+        region: "Andhra Pradesh",
+        dishes: [
+            { name: "Hyderabadi Biryani", description: "Fragrant dum-cooked rice with spices. (High in protein & aromatic flavors)" },
+            { name: "Gongura Pachadi", description: "Tangy sorrel leaf chutney. (Rich in iron & antioxidants)" }
+        ]
+    },
+    {
+        cuisine: "Eastern Indian",
+        region: "West Bengal",
+        dishes: [
+            { name: "Shorshe Ilish", description: "Hilsa fish in mustard gravy. (High in Omega-3 & good for the heart)" },
+            { name: "Rosogolla", description: "Soft, spongy cottage cheese dessert. (Light & delicious for digestion)" }
+        ]
+    },
+    {
+        cuisine: "Eastern Indian",
+        region: "Odisha",
+        dishes: [
+            { name: "Dalma", description: "Lentils with vegetables and raw papaya. (Packed with proteins & fiber)" },
+            { name: "Chhena Poda", description: "Burnt cheesecake made from cottage cheese. (Calcium-rich & nutritious dessert)" }
+        ]
+    },
+    {
+        cuisine: "Eastern Indian",
+        region: "Assam",
+        dishes: [
+            { name: "Assamese Thali", description: "Rice, fish, green leafy vegetables, and dal. (Balanced nutrition & healthy eating)" },
+            { name: "Masor Tenga", description: "Tangy fish curry with tomatoes & lemon. (Good for digestion & refreshing taste)" }
+        ]
+    },
+    {
+        cuisine: "Western Indian",
+        region: "Rajasthan",
+        dishes: [
+            { name: "Dal Baati Churma", description: "Wheat dumplings with lentils & sweet crumbles. (Rich in fiber & energy-boosting)" },
+            { name: "Laal Maas", description: "Fiery red mutton curry. (Great for metabolism & winter warming)" }
+        ]
+    },
+    {
+        cuisine: "Western Indian",
+        region: "Gujarat",
+        dishes: [
+            { name: "Dhokla", description: "Steamed gram flour cake. (Probiotic-rich & light on the stomach)" },
+            { name: "Undhiyu", description: "Mixed vegetable curry with winter greens. (Packed with vitamins & minerals)" }
+        ]
+    },
+    {
+        cuisine: "Western Indian",
+        region: "Maharashtra",
+        dishes: [
+            { name: "Puran Poli", description: "Sweet lentil-stuffed flatbread. (High in proteins & energy)" },
+            { name: "Misal Pav", description: "Spicy sprouted curry with bread. (Rich in fiber & protein-packed)" }
+        ]
+    },
+    {
+        cuisine: "Western Indian",
+        region: "Goa",
+        dishes: [
+            { name: "Pork Vindaloo", description: "Fiery, vinegar-based pork curry. (High in protein & bold flavors)" },
+            { name: "Bebinca", description: "Layered coconut milk dessert. (Great for digestion & rich taste)" }
+        ]
+    }
+];
+
+app.get('/menu', (req, res) => {
+    res.json(menu);
+});
+
+// Room Details
+const rooms = [
+    { type: "AC", price: $100, facilities: ["WiFi", "TV", "Mini Bar"] }, 
+    { type: "Non-AC", price: $70, facilities: ["WiFi", "TV"] } 
+];
+
+app.get('/rooms', (req, res) => {
+    res.json(rooms);
+});
+
+// Payment Options
+const payments = ["Credit Card", "Debit Card", "UPI", "Cash"];
+
+app.get('/payments', (req, res) => {
+    res.json(payments);
+});
+
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
